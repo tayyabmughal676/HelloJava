@@ -9,8 +9,13 @@ public class Main {
         Scanner number1 = new Scanner(System.in);
         Scanner number2 = new Scanner(System.in);
         Scanner operator = new Scanner(System.in);
-        System.out.println("Enter Operator - + / * ");
+
+        System.out.println("Available Operations :\n");
+        System.out.println("+\t--> Addition\n-\t--> Substraction\n/\t--> Division\n*\t--> Multiplication\nmod\t--> Modulas");
+
+        System.out.println("\nEnter Operator : ");
         oper = operator.nextLine();
+
 
         switch (oper){
             case "+":{
@@ -46,6 +51,13 @@ public class Main {
                 b = number2.nextInt();
                 System.out.println("Divide : " + divide(a ,b));
             }
+            case "mod": {
+                System.out.println("Enter Value 1 ");
+                a = number1.nextInt();
+                System.out.println("Enter Value 2 ");
+                b = number2.nextInt();
+                System.out.println("Modulas : " + modulas(a ,b));
+            }
             break;
             default:
                 System.out.println("You Entered wrong operator");
@@ -68,5 +80,9 @@ public class Main {
 
     private static int addition(int a, int b) {
         return a + b;
+    }
+
+    private static int modulas(int a, int b) {
+        return a % b;
     }
 }
