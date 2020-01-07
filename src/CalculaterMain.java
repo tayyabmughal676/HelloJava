@@ -8,7 +8,7 @@ public class CalculaterMain {
         String oper;
 
         System.out.println("Available Operations :\n");
-        System.out.println("+\t--> Addition\n-\t--> Substraction\n/\t--> Division\n*\t--> Multiplication\nmod\t--> Modulas\nLarge Or Small Num \t--> los");
+        System.out.println("+\t--> Addition\n-\t--> Substraction\n/\t--> Division\n*\t--> Multiplication\nmod\t--> Modulas\nLarge Or Small Num \t--> los\nInterest Rate\t--> %");
 
         System.out.println("\nEnter Operator : ");
         oper = scanner.nextLine();
@@ -66,6 +66,16 @@ public class CalculaterMain {
                 System.out.println("Addition : " + calc.modulas(num1, num2));
                 break;
 
+            case "%":
+                System.out.println("Enter Value : ");
+                num1 = scanner.nextDouble();
+
+                System.out.println("Enter Interest Rate : ");
+                num2 = scanner.nextDouble();
+
+                System.out.println("Interest Rate : " + calc.percentage(num1, num2));
+                break;
+
             case "los":
                 System.out.println("Enter how many numbers to input");
                 int inp = scanner.nextInt();
@@ -80,6 +90,11 @@ public class CalculaterMain {
                 ArrayList<Double> res = calc.findLargeAndSmall(arr);
                 System.out.println("Small Number : " + res.get(0));
                 System.out.println("Large Number : " + res.get(1));
+
+                break;
+
+            default:
+                System.out.println("Invalid Operator");
         }
     }
 }

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Calculater {
     private double num1;
     private double num2;
+    private double interest;
     private Double arr[];
 
     public double addition(double num1, double num2) {
@@ -33,6 +34,12 @@ public class Calculater {
         this.num1 = num1;
         this.num2 =  num2;
         return (int) (this.num1 % this.num2);
+    }
+
+    public double percentage(double num, double interest){
+        this.num1 = num;
+        this.interest = interest;
+        return num * (interest / 100.0);
     }
     public ArrayList<Double> findLargeAndSmall(Double arr[]){
         this.arr = arr;
